@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOP FOR</title>
+</head>
+<body>
+    <script>
+        // EXERCÍCIOS DE LOOP FOR 
+
+        /*1. faça um programa que peça 10 números inteiros calcule e mostre a quantidade
+        de numeros pares e a quantidade de números pares.*/ 
+
+        let impar = 0;
+        let par = 0;
+
+        for (let i = 0; i < 10; i++){
+            let num = Number(prompt("Entre com um número: "));
+
+            if (num % 2 == 0){
+                par++;
+            }else{
+                impar++;
+            }
+        }
+        alert("Quantidade de Números Pares é: " + par);
+        alert("Quantidade de Números Impares é: " + impar);
+
+
+        /* 2. Faça um programa que calcule e mostre a média aritmétrica de N notas.*/
+
+        let notas = Number(prompt("Entre com o números de notas: "));
+        let soma = 0;
+        let media = 0;
+
+        for (let i = 0; i < notas; i++){
+            let nota = Number(prompt("Entre com a nota " + (i + 1)));
+            soma += nota;
+        }
+        media = soma / notas;
+        alert("Soma: " + soma);
+        alert("Média: " + media);
+
+
+        /* 3. Faça um programa que peça a N pessoas a sua idade, ao final o programa 
+        deverá verificar se a média de idade da turma varia entre 0 e 25, 26 e 60 e 
+        maior que 60; e então, dizer se a turma é jovem, adulta ou idosa. Conforme a 
+        média calculada.*/
+
+        let qtdIdade = Number(prompt("Entre com a quantidade de idades: "));
+        let somaId = 0;
+        let mediaId = 0;
+
+        for (let i = 0; i < qtdIdade; i++){
+            let idade = Number(prompt("Entre com a idade " + (i + 1)));
+            somaId += idade;
+        }
+
+        mediaId = somaId / qtdIdade;
+        if(mediaId >= 0 && mediaId <= 25){
+            alert("Jovem");
+        }else if(mediaId >= 26 && mediaId <= 60){
+            alert("Adulto");
+        }else if(mediaId > 60){
+            alert("Idosa");
+        }
+
+
+        /* 4. Faça um programa que calcule o número médio de alunos por turma. Para isso,
+        peca a quantidade de turma e a quantidade de alunos para cada turma. As turmas não 
+        podem ter mais de 40 alunos.*/
+
+        let numTurmas = Number(prompt("Entre com o nº de turma"));
+
+        let somaAl = 0;
+        let invalido = true;
+
+        for (let i = 1; i <= numTurmas; i++) {
+            let invalido = true; 
+            do{
+                let numAlunos = Number(prompt("Entre com nº de alunos da turma " + i));
+                if(numAlunos <= 40){
+                    invalido = false;
+                    somaAl += numAlunos;
+                }else{
+                    alert("Número de alunos inválido, tente novamente!");
+                }
+            }while(invalido);
+        }
+        let mediaAl = somaAl / numTurmas;
+        alert("Média: " + mediaAl);
+
+
+        /* 6. Faça um programa que calcule o valor total investido por um colecionador em
+        sua coleçãode CDs e o valor médio gasto em cada um deles. O usuário deverá informar 
+        a quantidade de CDs e o valor para cada um.*/
+
+        let cds = Number(prompt("Entre com a quantidade de CDS"));
+        let somaCds = 0;
+        let mediaValor;
+
+        for (let i = 1; i <= cds; i++){
+           let preco = Number(prompt("Entre com o valor do cd " + i))
+            somaCds += preco;
+            mediaValor = somaCds / cds;
+        }
+        alert("A média gasta com cada CD: " + mediaValor);
+
+
+        /* 7. Sr. Manuel possui uma loja de conveniência. Faça um progrma que implante uma caixa
+        registradora. O programa deverá receber um número desconhecido de valores referentes aos
+        preços das mercadorias. Um valor zero deve ser informado pelo operador para indicar o 
+        final da compra. O programa deve então mostrar o total da compra e perguntar o valor
+        em dinheiro que o cliente forneceu, para então calcular e mostrar o valor do troco. 
+        Após esta operação, o programa deverá voltar ao ponto inicial, para registrar a próxima
+        compra.*/
+
+        alert("Loja de Conveniência!!!");
+        let sair = false;
+        let output = 0;
+        let continuaCompra, qtdProdutos, preco, valorPago, troco, total 
+
+        do{
+            continuaCompra = prompt("Deseja informa uma compra? S/N");
+
+            if(continuaCompra.toLocaleUpperCase() == "S"){
+                qtdProdutos = Number(prompt("Digite a quantidade de produto da compra: "));
+
+                total = 0;
+
+                for(let i = 1; i <= qtdProdutos; i++){
+                    preco = Number(prompt("Informe o preço do produto: " + i));
+                    total += preco;
+                    output += ("Produto " + i + ": R$" + preco + "\n");
+                }
+                valorPago = Number(prompt("Entre com o valor pago: "));
+                
+                troco = total - valorPago;
+                
+                alert(output);
+                alert(("Total: R$" + total));
+                alert(("Dinheiro: R$" + valorPago));
+                alert(("Troco: R$" + troco));
+            }else{
+                sair = true;
+            }
+        }while(!sair)
+
+
+        /* 8. O departamento estadual de metodologia lhe contratou para desenvolve
+        um program que leia um conjunto ineterminado de temperaturas informadas, bem
+        como a média das temperaturas. */
+
+        let qtdTemp = Number(prompt("Entre com a quantidade de temperatura"));
+        let soma = 0;
+        let menor = 0;
+        let maior = 0;
+
+        for (let i = 1; i <= qtdTemp; i++){
+            let temp = Number(prompt("Entre com a temperatra " + i));
+            soma += temp;
+
+            if (temp > maior){
+                maior = temp; 
+            }
+            if (temp < menor){
+                menor = temp;
+            }
+        }
+
+        alert("Média: " + (soma / qtdTemp));
+        alert("Maior temperatura: " + maior);
+        alert("Menor temperatura: " + menor);
+
+    </script>
+</body>
+</html>

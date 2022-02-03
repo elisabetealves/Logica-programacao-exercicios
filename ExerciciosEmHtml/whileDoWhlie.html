@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>While / Do...While</title>
+</head>
+<body>
+    <script>
+    
+    // EXERCÍCIOS DE LOOPS WHILE E DO...WHILE
+       
+    // 1 - Fça um programa que peça uma nota entre 0 e 10. Mostre uma mensagem caso 
+    // o valor seja inválido e continue pedindo até o usuário informe um valor válido. 
+
+    let nota = Number(prompt("Entre com uma nota entre 0 e 10: "));
+    let notaValida = true;
+    do{
+        if(nota >= 0 && nota <= 10){
+            alert("você digitou" + nota);
+        }else{
+            alert("Nota invalida, digite novamente")
+        }
+    }while(!notaValida);
+
+
+
+    </script>
+</body>
+</html>
