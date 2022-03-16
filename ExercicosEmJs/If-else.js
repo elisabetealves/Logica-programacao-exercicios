@@ -213,7 +213,7 @@ DICAS:
 
     if( lado1 == lado2 && lado1 == lado3 && lado2 == lado3){
         console.log("Triângulo Equiláreto");
-    } else if( lado1 != lado2 && lado1 != lado3 && lado3 != lado3){
+    } else if( lado1 != lado2 && lado1 != lado3 && lado2 != lado3){
         console.log("Triângulo Escaleno");
     } else if( lado1 == lado2 || lado1 == lado3 || lado2 == lado3){
         console.log("Triângulo Isóceles");
